@@ -8,20 +8,25 @@
 ## those 4 functions are able to set a new matrix x, retrieve matrix x from it's storage, set the inverse of x (if given the inverse) and store it and retrieve the inverse of x from it's storage, respectively.
 
 makeCacheMatrix <- function(x = matrix()) {
-  #as for now the possible to compute inverse m is set to NULL
+  #as for now the to-compute inverse m is set to NULL
   m <- NULL
-  #define function set, it takes one argument
+  
+  #define function "set"
   set <- function(y) {
     x <<- y
     m <<- NULL
   }
-  #define function get, doesn't take any arguments, but returns m
+  
+  #define function "get"
   get <- function() x
-  #define the function setinverse
+  
+  #define function "setinverse"
   setinverse <- function(inverse) m <<- inverse
-  #define the function getinverse
+  
+  #define function "getinverse"
   getinverse <- function() m
-  #return the list with the 4 functions
+  
+  #return list with the 4 functions in it
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
@@ -34,14 +39,17 @@ makeCacheMatrix <- function(x = matrix()) {
 # if not, it will calculate the inverse, cache it and eventually return it.
 
 cacheSolve <- function(x, ...) {
-  # use getinverse from the fiven list to check for potentially cached inverses.
+  
+  # use "getinverse" from the given list to retrieve the cached inverse.
   m <- x$getinverse()
-  # if "getinverse" returns NULL, no inverse has been cached, yet (reason makeCacheMatrix sets potential inverse = NULL)
+  
+  # check, whether an actual inverse has been cached yet. 
   if(!is.null(m)) {
-    #if an actual inverse is present: return the inverse
+    #if an actual inverse is present (m is NOT NULL): return the inverse
     message("getting cached Inverse")
     return(m)
   }
+  
   #if no inverse is present, get the matrix from the cache
   data <- x$get()
   #calculate the inverse
