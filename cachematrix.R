@@ -1,6 +1,7 @@
 ## There are two functions in this file, the function makeCacheMatrix and the cacheSolve.
 ## makeCachematrix takes a matrix and "prepares" it to be used by the cacheSolve Funktion.
-## cacheSolve takes the returned values of makeCachematrix (list) and returns the inverse of the matrix, given to makeCachematrix.
+## cacheSolve takes the returned values of makeCachematrix (list) and returns the inverse of the matrix, 
+## which was originaly given to makeCachematrix. It also caches the inverse for later use.
 
 ## makeCacheMatrix takes a matrix x and returns a list of 4 functions: set, get, setinverse and getinverse. 
 ## those 4 functions are able to set a new matrix x, retrieve matrix x from it's storage, set the inverse of x (if given the inverse) and store it and retrieve the inverse of x from it's storage, respectively.
