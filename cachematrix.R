@@ -1,3 +1,5 @@
+## Function Framework originates from Roger D. Peng. 
+## Original Functions can be seen in the README file of the following gitHub repository: https://github.com/rdpeng/ProgrammingAssignment2
 ## There are two functions in this file, the function makeCacheMatrix and the cacheSolve.
 ## makeCachematrix takes a matrix and "prepares" it to be used by the cacheSolve Funktion.
 ## cacheSolve takes the returned values of makeCachematrix (list) and returns the inverse of the matrix, 
